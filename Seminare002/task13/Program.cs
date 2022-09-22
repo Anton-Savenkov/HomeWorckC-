@@ -24,15 +24,23 @@ int NumberDigitNumber(int newRundomNumber)
 }
 int countDigit = NumberDigitNumber(newRundomNumber);
 
-int DigitInSelectedPosition(int newRundomNumber, int countDigit, int numberPositionLeft)
+if (countDigit < numberPositionLeft)
 {
-    for (int i = 0; i < countDigit - numberPositionLeft; i++)
+    Console.WriteLine($"Искоммая цифра отсутствует");
+}
+else 
+{
+    int DigitInSelectedPosition(int newRundomNumber, int countDigit, int numberPositionLeft)
     {
-        newRundomNumber = newRundomNumber / 10;
-    }
+        for (int i = 0; i < countDigit - numberPositionLeft; i++)
+        {
+            newRundomNumber = newRundomNumber / 10;
+        }
+     
     newRundomNumber = newRundomNumber % 10;
     int result = new int();
     result = newRundomNumber;
     return result;
-}
+    }
 Console.WriteLine($"Искоммая цифра {DigitInSelectedPosition(newRundomNumber, countDigit, numberPositionLeft)}");
+}
