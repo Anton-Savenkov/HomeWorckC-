@@ -11,7 +11,7 @@ int getNumbeerFromUser(string userInform)
     Console.Write($"{userInform} ");
     while (!int.TryParse(Console.ReadLine(), out result) || result < 9999 || result > 99999)
     {
-        Console.Write($"Ошибка ввода! Ожидается целое число. {userInform} ");
+        Console.Write($"Ошибка ввода! Ожидается целое пятизначное число. {userInform} ");
     }
     return result;
 }
@@ -33,6 +33,4 @@ bool CheckNumberForPalindrome(int number)
     return result;
 }
 bool checkNumberForPalindrome = CheckNumberForPalindrome(numberFromUser);
-Console.WriteLine(checkNumberForPalindrome);
-
 Console.WriteLine(checkNumberForPalindrome ? $"Число {numberFromUser} является палиндромом" : $"Число {numberFromUser} не является палиндромом"); 
