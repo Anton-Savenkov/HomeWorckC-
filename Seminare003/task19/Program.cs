@@ -23,13 +23,18 @@ Console.WriteLine(numberFromUser);
 bool CheckNumberForPalindrome(int number)
 {
     bool result = false;
-    if (number / 10000 == number % 10)
+    if (number / 10000 == number % 10 && (number / 1000) % 10 == (number % 100) / 10)
+    {
+        result = true;
+    }
+    /* if (number / 10000 == number % 10)
     {
         if ((number / 1000) % 10 == (number % 100) / 10)
         {
             result = true;
         }
     }
+    */
     return result;
 }
 bool checkNumberForPalindrome = CheckNumberForPalindrome(numberFromUser);
