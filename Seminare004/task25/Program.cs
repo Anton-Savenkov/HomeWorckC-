@@ -4,13 +4,12 @@
 2, 4 -> 16
 */
 
-long RaisingNumberToPowerOfNumber(int raisNumber, int powerOfNumber)
+long RaisingNumberToPositivPowerOfNumber(int raisNumber, int powerOfNumber)
 {
     int buff = raisNumber;
     for (int i = 1; i < powerOfNumber; i++)
     {
         raisNumber = raisNumber * buff;
-        //Console.WriteLine($"{raisNumber}");
     }
     long result = raisNumber;
     return result;
@@ -19,8 +18,19 @@ long RaisingNumberToPowerOfNumber(int raisNumber, int powerOfNumber)
 Console.WriteLine("Введите два числа, для возведения первого числа (A) в натуральную степень второго числа (B)");
 Console.Write("Введите число A: ");
 int raisNumber = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите число В: ");
-int powerOfNumber = Convert.ToInt32(Console.ReadLine());
+
+int getNumberFromUser(string userInformation)
+{
+    int result = 0;
+    Console.Write($"{userInformation}");
+    while (!int.TryParse(Console.ReadLine(), out result) || result <=0 )
+    {
+        Console.Write($"Ошибка ввода! Введите целое положительное число большше 0. {userInformation} ");
+    }
+    return result;
+}
+
+int powerOfNumber = getNumberFromUser("Введите число В: ");
 Console.WriteLine();
-Console.WriteLine($"Число А ({raisNumber}) в степени В ({powerOfNumber}) равно {RaisingNumberToPowerOfNumber(raisNumber, powerOfNumber)}");
+Console.WriteLine($"Число А [{raisNumber}] в степени В [{powerOfNumber}] равно {RaisingNumberToPositivPowerOfNumber(raisNumber, powerOfNumber)}");
 Console.WriteLine();
