@@ -3,25 +3,35 @@
 [3, 7, 23, 12] -> 19
 [-4, -6, 89, 6] -> 0
 */
-void printArray(int[] arrayRandomNum)
+void PrintArray(int[] arrayRandomNum)
 {
     Console.Write($"[");
     for (int i = 0; i < arrayRandomNum.Length - 1; i++)
     {
-        Console.Write($" {arrayRandomNum[i]},");
+        Console.Write($"{arrayRandomNum[i]}, ");
     }
-    Console.Write($" {arrayRandomNum[arrayRandomNum.Length - 1]}]");
+    Console.Write($"{arrayRandomNum[arrayRandomNum.Length - 1]}]");
 }
-void fillAray(int[] newArr)
+
+void FillAray(int[] newArr)
 {
     for (int i = 0; i < newArr.Length; i++)
     {
-        newArr[i] = new Random().Next(1, 100);
+        newArr[i] = new Random().Next(1, 10);
     }
 }
-
+int SumElementByIndex(int[] newArr)
+{
+    int summElements = 0;
+    for (int i = 0; i < newArr.Length; i++)
+    {
+        if (i % 2 != 0) summElements += newArr[i];
+    }
+    return summElements;
+}
 
 int[] newArray = new int[10];
-printArray(newArray);
-fillAray(newArray);
-printArray(newArray);
+// PrintArray(newArray);
+FillAray(newArray);
+PrintArray(newArray);
+Console.WriteLine($" Сумма элементов на нечетных позициях = {SumElementByIndex(newArray)}");

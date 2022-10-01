@@ -17,22 +17,22 @@ void FillAray(int[] newArray) // заполнение массива
     }
 }
 
-void printArray(int[] arrayRandom) //вывод массива в консоль
+void printArray(int[] newArray) //вывод массива в консоль
 {
     Console.Write("Массив случайных чисел: [");
-    for (int i =0; i < arrayRandom.Length - 1; i++)
+    for (int i =0; i < newArray.Length - 1; i++)
     {
-        Console.Write($"{arrayRandom[i]},");
+        Console.Write($"{newArray[i]},");
     }
-    Console.Write($"{arrayRandom[arrayRandom.Length-1]}]");
+    Console.Write($"{newArray[newArray.Length-1]}]");
 }
 
-int searchForEvenNumbers(int[] arrayRandomNumbers) // поиск четных элементов массива
+int searchForEvenNumbers(int[] newArray) // поиск четных элементов массива
 {
     int countEvenNumbers = 0;
-    for (int i = 0; i < arrayRandomNumbers.Length; i++)
+    for (int i = 0; i < newArray.Length; i++)
     {
-        if (arrayRandomNumbers[i] % 2 == 0)
+        if (newArray[i] % 2 == 0)
         {
             countEvenNumbers += 1;
         }
