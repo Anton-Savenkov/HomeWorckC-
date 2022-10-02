@@ -12,7 +12,6 @@ void PrintArray(int[] arrayNew)
     }
     Console.Write($"{arrayNew[arrayNew.Length - 1]}]");
 }
-
 void FillAray(int[] arrayNew)
 {
     for(int i = 0; i < arrayNew.Length; i++)
@@ -20,7 +19,6 @@ void FillAray(int[] arrayNew)
         arrayNew[i] = new Random().Next(1, 5);
     }
 }
-
 void MultiPairsNumber(int[] arrayNew)
 {
     int multiPairsNumber = 0;
@@ -32,12 +30,24 @@ void MultiPairsNumber(int[] arrayNew)
     }
     
 }
-    
-
-int[] arrayRandomNum = new int [7];
+int[] arrayRandomNum = new int [8];
 FillAray(arrayRandomNum);
 Console.Write("Заданный массив: ");
 PrintArray(arrayRandomNum);
 Console.Write("Произведение пар чисел равны: ");
 MultiPairsNumber(arrayRandomNum);
 Console.WriteLine();
+
+/*
+void MultiPairsNumber(int[] arrayNew)
+{
+    int multiPairsNumber = 0;
+    int countTwo = arrayNew.Length - 1;
+    for(int i = 0; i < arrayNew.Length / 2; i++)
+    {
+        multiPairsNumber = arrayNew[i] * arrayNew[countTwo];
+        Console.Write($" {multiPairsNumber}");
+        countTwo = countTwo - 1;
+    }
+}    
+*/

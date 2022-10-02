@@ -11,7 +11,6 @@ void PrintArray(int[] arrayNew)
     }
     Console.Write($"{arrayNew[arrayNew.Length - 1]}]");
 }
-
 void FillAray(int[] arrayNew)
 {
     for(int i = 0; i < arrayNew.Length; i++)
@@ -33,7 +32,6 @@ void SelectionSortArray(int[] arrayNew)
         arrayNew[minPosition] = buff;
     }
 }
-
 int DiffMinMaxNumber(int[] arrayNew)
 {
     int diffNumber = arrayNew[arrayNew.Length - 1] - arrayNew[0];

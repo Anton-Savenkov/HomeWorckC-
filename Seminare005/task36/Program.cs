@@ -30,7 +30,7 @@ int SumElementByIndex(int[] newArr)
     return summElements;
 }
 
-int[] newArray = new int[10];
+int[] newArray = new int[5];
 // PrintArray(newArray);
 FillAray(newArray);
 PrintArray(newArray);
