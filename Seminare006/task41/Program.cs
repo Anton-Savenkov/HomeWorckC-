@@ -2,23 +2,22 @@
 0, 7, 8, -2, -2 -> 2
 -1, -7, 567, 89, 223-> 3
 */
+Console.WriteLine("Введите колличество чисел M = ");
+int sizeArray = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите произвольные числа: ");
 
-Console.WriteLine("Введите несколько чисел через робел: ");
-int[] inputUseerArray = Console.ReadLine().Split(' ').Select(e => Convert.ToInt32(e)).ToArray();
-int CountNumber(int[] inputUserArr)
+int[] generateArray(int arrSize)
 {
-    int coutNumber = 0;
-    for (int i = 0; i < inputUserArr.Length; i++)
+    int[] outputArr  = new int[arrSize];
+    for (int i = 0; i < outputArr.Length; i++)
     {
-        if(inputUserArr[i] > 0)
-        coutNumber += 1;
+        outputArr[i] = Convert.ToInt32(Console.ReadLine());
     }
-    return coutNumber;
+    return outputArr;
 }
-
-void printArray(int[] arrayToPrint, string name)
+void PrintArray(int[] arrayToPrint, string name)
 {
-    System.Console.WriteLine($"---{name}----");
+    System.Console.WriteLine($"------ {name} ------");
     Console.Write("[");
     for (int i = 0; i < arrayToPrint.Length; i++)
     {
@@ -31,9 +30,22 @@ void printArray(int[] arrayToPrint, string name)
     Console.WriteLine("]");
     Console.WriteLine();
 }
-printArray(inputUseerArray, "Введеннные числа");
-Console.WriteLine($"Колличество чисел больше 0 -> {CountNumber(inputUseerArray)}");
 
+int CountNumber(int[] inputUserArr)
+{
+    int coutNumber = 0;
+    for (int i = 0; i < inputUserArr.Length; i++)
+    {
+        if(inputUserArr[i] > 0)
+        coutNumber += 1;
+    }
+    return coutNumber;
+}
+int[] userNumberArray = generateArray(sizeArray);
+PrintArray(userNumberArray, "Заданный массив");
+
+Console.Write($"Колличество чисел больше 0 -> {CountNumber(userNumberArray)}");
+Console.WriteLine();
 
 /*
 *Задача(сложная не на оценку) *
