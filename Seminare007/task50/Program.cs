@@ -52,42 +52,35 @@ void print2DArray(int[,] arrayToPrint)
         Console.WriteLine();
     }
 }
+
 void searchElementInOrder(int[,] random2DArray, int searchOrderNum, int height, int width)
 {
     int result = 0;
-    int countNumber = 0;
+    int countLine = 0;
     if(searchOrderNum <= height * width - 1)
     {
         for (int i = 0; i < random2DArray.GetLength(0); i++)
         {
-            for (int j = 0; j < random2DArray.GetLength(0); j++)
+            
+            for (int j = 0; j < random2DArray.GetLength(1); j++)
             {
-                countNumber ++;
-                if(countNumber - 1 == searchOrderNum)
-                { 
+                if(searchOrderNum - countLine == (i+j))
+                {
                     result = random2DArray[i,j];
                     Console.WriteLine($"{searchOrderNum} -> {result}");
                     return;
                 }
                 
             }
+            countLine += height;
+            
         }
     }
     else Console.WriteLine($"{searchOrderNum} -> такого числа в массиве нет");
 }
 
-int[,] generatedArray = generate2DArray(3,3,0,30);
+int[,] generatedArray = generate2DArray(3,4,0,30);
 print2DArray(generatedArray);
 Console.WriteLine("Введите позицию элемента для поиска: ");
 int searchOrderNum = Convert.ToInt32(Console.ReadLine());
-searchElementInOrder(generatedArray, searchOrderNum, 3, 3);
-
-
-/*
-Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
-Например, задан массив:
-1 4 7 2
-5 9 2 3
-8 4 2 4
-Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
-*/
+searchElementInOrder(generatedArray, searchOrderNum, 3, 4);
