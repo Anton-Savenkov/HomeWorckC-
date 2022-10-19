@@ -75,8 +75,12 @@ int[,] multiTwoMatrix(int[,] inputOneMatrix, int[,] inputTwoMatrix)
 
 int[,] randomOneMatrix = FillTowDArray(2, 2, 1, 3);
 int[,] randomTwoMatrix = FillTowDArray(2, 2, 3, 4);
-printIntTowDArrayYello(randomOneMatrix);
-printIntTowDArrayYello(randomTwoMatrix);
-Console.WriteLine();
-int [,] multiOneAdnTwoMatrix = multiTwoMatrix(randomOneMatrix, randomTwoMatrix);
-printIntTowDArrayBlue(multiOneAdnTwoMatrix);
+if(randomOneMatrix.GetLength(1) != randomTwoMatrix.GetLength(0)) Console.WriteLine("Найти произведение заданных матриц невозмможно");
+else
+{
+    printIntTowDArrayYello(randomOneMatrix);
+    printIntTowDArrayYello(randomTwoMatrix);
+    Console.WriteLine();
+    int [,] multiOneAdnTwoMatrix = multiTwoMatrix(randomOneMatrix, randomTwoMatrix);
+    printIntTowDArrayBlue(multiOneAdnTwoMatrix);
+}
